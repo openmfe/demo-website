@@ -1,0 +1,97 @@
+$font-url-base: "/_assets/fonts";
+
+@font-face {
+    font-family: Noto;
+    src: url("#{$font-url-base}/notosans-regular.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Noto;
+    src: url("#{$font-url-base}/notosans-regularitalic.woff2") format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Noto;
+    src: url("#{$font-url-base}/notosans-semibold.woff2") format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Noto;
+    src: url("#{$font-url-base}/notosans-semibolditalic.woff2") format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Noto, Arial, sans-serif;
+    font-size: 14px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: #222;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+        font-size: 25px;
+        font-weight: 500;
+    }
+}
+
+main {
+    width: 100%;
+    max-width: 880px;
+    margin: 130px auto 30px;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 0 0 2rem;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 25px;
+    margin: 3rem 0 1.5rem;
+    font-weight: normal;
+}
+
+.desc {
+    overflow: hidden;
+    margin: 0 0 2rem;
+
+    img {
+        float: left;
+        margin: 0 1rem 1rem 0;
+    }
+}
+
+footer {
+    width: calc(100% - 20px);
+    background: #eee;
+    padding: 10px;
+    text-align: center;
+}

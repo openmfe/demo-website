@@ -1,0 +1,24 @@
+---
+layout: main
+pagination:
+    data: regions
+    size: 1
+    alias: region
+permalink: "/{{ region.slug }}/"
+eleventyComputed:
+  title: "{{ region.title }}"
+  excerpt: "{{ region.excerpt }}"
+---
+
+<article>
+    <h1>{{ region.title }}</h1>
+
+    <p class=desc>
+        <img src="{{ region.image.src }}" alt="" width="{{ region.image.width }}" height="{{ region.image.height }}">
+        {{ region.description }}
+    </p>
+
+    <h2>Visit {{ region.title }} – check out these great hotels:</h2>
+
+    {% openmfe "hotel-offers", { region: region.id }, { semantic: true } %}
+</article>

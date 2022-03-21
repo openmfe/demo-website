@@ -1,0 +1,14 @@
+---
+layout: main
+title: Overview
+---
+
+<h1>Visit our destinations</h1>
+
+<ul>
+    {% for region in regions %}
+        <li>
+            <a href="/{{ region.slug }}/">{{ region.title }}</a>
+        </li>
+    {% endfor %}
+</ul>

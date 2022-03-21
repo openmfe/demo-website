@@ -1,0 +1,87 @@
+{
+    "http://localhost:9081/openmfe/manifest.yaml": {
+        "updated": 1647803965,
+        "contract": {
+            "version": "1.0",
+            "name": "Hotel Offers",
+            "tag": "hotel-offers",
+            "url": {
+                "frontend": "http://localhost:9081/main.js",
+                "prerender": "http://localhost:9081/openmfe/__BACKEND_URL__/prerender",
+                "semantic": "http://localhost:9081/openmfe/__BACKEND_URL__/semantic"
+            },
+            "attributes": [
+                {
+                    "name": "region",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "pattern": "^[a-z0-9]+$"
+                    }
+                }
+            ],
+            "events": [
+                {
+                    "name": "hotel-offers.add-to-wishlist",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^[a-z0-9]+$"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "image": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "openmfe.tracking",
+                    "tracking": "hotel-offers.preview-opened",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^[a-z0-9]+$"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "image": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "openmfe.tracking",
+                    "tracking": "hotel-offers.preview-closed",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^[a-z0-9]+$"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "image": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        }
+                    }
+                }
+            ],
+            "repository": "https://gitlab.com/openmfe/demo/microfrontend.git"
+        }
+    }
+}
