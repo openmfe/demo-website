@@ -41,7 +41,7 @@
                     }
                 },
                 {
-                    "name": "openmfe.tracking",
+                    "name": "openmfe.analytics",
                     "tracking": "hotel-offers.preview-opened",
                     "schema": {
                         "type": "object",
@@ -61,7 +61,7 @@
                     }
                 },
                 {
-                    "name": "openmfe.tracking",
+                    "name": "openmfe.analytics",
                     "tracking": "hotel-offers.preview-closed",
                     "schema": {
                         "type": "object",
