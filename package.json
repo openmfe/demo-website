@@ -1,22 +1,29 @@
 {
-    "name": "example-site",
+    "name": "demo-website",
     "private": true,
     "scripts": {
-        "dev": "test -d dist && rm -r dist; npm-run-all --parallel dev:*",
+        "dev": "test -d dist && rm -r dist; mkdir -p dist; npm-run-all --parallel dev:*",
         "build": "test -d dist && rm -r dist; npm-run-all build:*",
         "dev:eleventy": "ELEVENTY_ENV=development npx @11ty/eleventy --watch --serve --port ${SITE_PORT:-8083}",
         "dev:rollup": "npx rollup -c -w",
+        "dev:sass": "sass src/styles/main.scss dist/_assets/css/main.css --watch",
         "build:eleventy": "ELEVENTY_ENV=production npx @11ty/eleventy",
-        "build:rollup": "npx rollup -c --environment BUILD:production"
+        "build:rollup": "npx rollup -c --environment BUILD:production",
+        "build:sass": "sass src/styles/main.scss dist/_assets/css/main.css"
     },
     "dependencies": {
-        "@11ty/eleventy": "^0.12.1",
-        "@rollup/plugin-multi-entry": "^4.1.0",
-        "@openmfe/eleventy-plugin": "^0.1.2",
-        "eleventy-plugin-sass": "^1.2.0",
-        "js-beautify": "^1.14.0",
+        "@11ty/eleventy": "^1.0.2",
+        "@openmfe/eleventy-plugin": "^0.3.0",
+        "@openmfe/manifest": "^0.3.0",
+        "@rollup/plugin-json": "^6.0.0",
+        "@rollup/plugin-multi-entry": "^3.0.1",
+        "@rollup/plugin-node-resolve": "^15.0.2",
+        "js-beautify": "^1.14.7",
         "node-fetch": "^2.6.6",
         "npm-run-all": "^4.1.5",
-        "rollup": "^2.62.0"
+        "rollup": "^2.60.2",
+        "sass": "^1.62.0",
+        "slugify": "^1.6.6",
+        "yaml": "^1.10.2"
     }
 }

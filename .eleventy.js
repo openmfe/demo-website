@@ -1,4 +1,3 @@
-const pluginSass = require("eleventy-plugin-sass")
 const pluginOpenMFE = require("@openmfe/eleventy-plugin")
 const beautify = require("js-beautify").html
 
@@ -8,10 +7,7 @@ module.exports = function(eleventyConfig) {
         "src/assets/favicon.ico": "/favicon.ico"
     })
 
-    eleventyConfig.addPlugin(pluginSass, {
-        watch: ["src/styles/*.scss"],
-        outputDir : "dist/_assets/css"
-    })
+    eleventyConfig.addWatchTarget('./src/styles')
 
     eleventyConfig.addPlugin(pluginOpenMFE, {
         manifest: process.env.MFE_MANIFEST_URL
